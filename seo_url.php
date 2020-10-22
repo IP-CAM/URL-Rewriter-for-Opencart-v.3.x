@@ -1,5 +1,29 @@
 <?php
+/**
+ * Opencart Telegram Notifier is a program code which allows you to
+ * configure notifications in CMS Opencart (3.X version) by using
+ * Telegram messenger bot.
+ *
+ * Copyright (C) 2020  Dmitriy Sokolenko
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+/**
+ * ControllerStartupSeoUrl class
+ */
 class ControllerStartupSeoUrl extends Controller {
+	/**
+	 * @return void
+	 */
 	public function index() {
 		// Add rewrite to url class
 		if ($this->config->get('config_seo_url')) {
@@ -95,6 +119,9 @@ class ControllerStartupSeoUrl extends Controller {
 		}
 	}
 
+	/**
+	 * @return string
+	 */
 	public function rewrite($link) {
 		$url_info = parse_url(str_replace('&amp;', '&', $link));
 
